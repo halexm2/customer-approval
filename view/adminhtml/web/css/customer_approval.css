@@ -1,0 +1,32 @@
+.customer-pending-anchor {
+    position: relative;
+}
+
+.customer-approval-state {
+    background: #c92134;
+    font-weight: bold;
+    padding: 8px;
+    white-space: nowrap;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+
+    &.approved {
+        background: #2A6002;
+    }
+}
+
+.customer-pending-badge {
+    position: absolute;
+    width: fit-content;
+    padding: 4px 8px;
+    background: #636363;
+    border-radius: 8px;
+    right: 16px;
+    top: 8px;
+
+    &.not_empty {
+        font-weight: bold;
+        background: #c92134;
+    }
+}

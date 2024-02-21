@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category    Halex
+ * @package     Halex\CustomerApproval
+ * @author      Aleksejs Prjahins <aleksejs.prjahins@gmail.com>
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="customer_approval" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <tab>customer</tab>
+            <resource>Halex_CustomerApproval::extension</resource>
+            <label>Customer Approval</label>
+            <group id="general" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Customer Approval Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Customers wouldn't be able to log in to the account till their accounts wouldn't be
+                        approved.
+                    </comment>
+                </field>
+                <field id="error_message" translate="label" type="textarea" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Login Error Message</label>
+                    <comment>
+                        This error message will be displayed during an attempt to login if customer's account
+                        is not approved
+                    </comment>
+                </field>
+                <field id="create_account_message" translate="label" type="textarea" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Create Account Message</label>
+                    <comment>
+                        This message will be displayed after success registration
+                    </comment>
+                </field>
+                <field id="create_account_replace_message" translate="label" type="select" sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Hide default success message (Create Account)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Default success message "Thank you for registering with [store_name]." will be hidden, only
+                        message from field below will be shown.
+                    </comment>
+                </field>
+                <field id="show_badge" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Badge in menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show count of customers which pending approval (Customers Menu Section)</comment>
+                </field>
+            </group>
+            <group id="notifications" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Notifications</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Notify Customer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        The customer will be notified using email when an account has been approved
+                    </comment>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="75"
+                       showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Notify Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <comment>
+                        This email template will be used to sent a notification when customer account was approved
+                    </comment>
+                    <depends>
+                        <field id="customer_approval/notifications/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="email_identity" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <depends>
+                        <field id="customer_approval/notifications/enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category    Halex
+ * @package     Halex\CustomerApproval
+ * @author      Aleksejs Prjahins <aleksejs.prjahins@gmail.com>
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\Model\Session">
+        <plugin name="Halex_CustomerApproval::SessionPlugin"
+                type="Halex\CustomerApproval\Plugin\CustomerSession"/>
+    </type>
+    <type name="Magento\Customer\Controller\Account\CreatePost">
+        <plugin name="Halex_CustomerApproval::AccountCreatePlugin"
+                type="Halex\CustomerApproval\Plugin\CreatePostController"/>
+    </type>
+</config>

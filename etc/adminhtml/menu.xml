@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category    Halex
+ * @package     Halex\CustomerApproval
+ * @author      Aleksejs Prjahins <aleksejs.prjahins@gmail.com>
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Halex_CustomerApproval::extension" title="Customer Approval" module="Halex_CustomerApproval"
+             sortOrder="200"
+             parent="Magento_Customer::customer" resource="Halex_CustomerApproval::extension"/>
+        <add id="Halex_CustomerApproval::pending_customers" title="Pending Customers" module="Halex_CustomerApproval"
+             sortOrder="10"
+             parent="Halex_CustomerApproval::extension" resource="Halex_CustomerApproval::pending_customers"
+             action="customer_approval/pending/grid"/>
+        <add id="Halex_CustomerApproval::configuration" title="Configuration" module="Halex_CustomerApproval"
+             sortOrder="20"
+             parent="Halex_CustomerApproval::extension" resource="Halex_CustomerApproval::configuration"
+             action="admin/system_config/edit/section/customer_approval"/>
+    </menu>
+</config>

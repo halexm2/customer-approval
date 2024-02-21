@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category    Halex
+ * @package     Halex\CustomerApproval
+ * @author      Aleksejs Prjahins <aleksejs.prjahins@gmail.com>
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customer_approval>
+            <general>
+                <enabled>0</enabled>
+                <error_message>This account is not approved.</error_message>
+                <create_account_message>Thank you for registering with %1. Your account added for review, you will get an email when it is approved.
+                </create_account_message>
+                <show_badge>1</show_badge>
+            </general>
+            <notifications>
+                <enabled>0</enabled>
+                <email_template>customer_approval_notifications_email_template</email_template>
+            </notifications>
+        </customer_approval>
+    </default>
+</config>

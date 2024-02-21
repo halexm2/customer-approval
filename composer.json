@@ -1,0 +1,19 @@
+{
+    "name": "halexm2/customer-approval",
+    "description": "Magento 2 Customer Approval Extension",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Aleksejs Prjahins",
+            "email": "aleksejs.prjahins@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Halex\\CustomerApproval\\": ""
+        }
+    }
+}
