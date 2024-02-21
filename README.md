@@ -39,17 +39,14 @@ bin/magento setup:upgrade
 ### Customer Grid Mass Action
 ![Customer Grid Mass Action](docs/img/customer_grid_massaction.png)
 
-### Customer Grid Mass Action
-![Customer Grid Mass Action](docs/img/customer_grid_massaction.png)
-
 ### Customer Grid Approval State Column
 ![Customer Grid Approval State Column](docs/img/customers_grid.png)
 
 ### Pending Customers Grid
 ![Customer Grid Approval State Column](docs/img/pending_customers_grid.png)
 
-### Admin Menu Pending Customers Badge
+### Admin menu Pending Customers Badge
 ![Admin Menu Pending Customers Badge](docs/img/admin_menu_badge.png)
 
-### ACL
+### Access Control List configuration
 ![ACL](docs/img/customer_approval_acl.png)
