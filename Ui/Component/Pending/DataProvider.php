@@ -92,9 +92,14 @@ class DataProvider extends SourceDataProvider
 
             if (!isset($itemData[Config::IS_APPROVED_ATTR_CODE])) {
                 $customerEntity = $this->customerRepository->getById($itemData['entity_id']);
-                $itemData[Config::IS_APPROVED_ATTR_CODE] = $customerEntity->getCustomAttribute(
+                
+                $isApprovedAttribute = $customerEntity->getCustomAttribute(
                     Config::IS_APPROVED_ATTR_CODE
-                )->getValue();
+                );
+
+                if ($isApprovedAttribute) {
+                    $itemData[Config::IS_APPROVED_ATTR_CODE] = $isApprovedAttribute->getValue();
+                }
             }
 
             $arrItems['items'][] = $itemData;
